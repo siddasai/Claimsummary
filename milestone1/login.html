@@ -1,0 +1,111 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<title> Login Page </title>  
+<style>
+    input[type="text"],input[type="password"]{
+        width: 250px;
+        height: 25px;
+    }
+   
+    form{
+        border: 1px solid black;
+        width: 400px;
+        margin:20px auto;
+    }
+    td{
+        padding:10px;
+    }
+    td:first-child{
+        text-align:right;
+        font-weight: bold;
+    
+        
+    }
+    h1{
+  text-align: center;
+    }
+  footer {
+  text-align: center;
+  padding: 10px;
+  background-color:black;
+  color: white;
+  
+
+}
+h1 {
+  text-align: center;
+  padding: 10px;
+  background-color:black;
+  color: white;
+  margin-bottom: 3rem;
+
+
+}
+footer{
+    margin-top: 10rem;
+}
+</style>
+
+</head>    
+<body>    
+    <h1> Claim Summary Management </h1><br><br>
+   
+    <form action="VeiwClaim.html" method="POST" onsubmit="return validation();">
+        
+    <table>
+       
+        <tr>
+            <td><label>Username:</label></td>
+        
+            <td>
+                <input type="text" name="username" id="name">
+            </td>
+        </tr>
+        <tr>
+            <td><label>Password:</label></td>
+            <td>
+                <input type=password name="password" id="password">
+            </td>
+        </tr>
+    <tr>
+        <td colspan="2" style="position: relative; left: -110px;">
+            <input type="submit" name="submit"value="Login"></td>
+
+    </tr>
+    </table>
+    <div id="eresult" style="color:red"></div>
+    
+    </form>
+   
+    
+    <script>
+         function validation(){
+                    var name=document.getElementById('name').value;
+                     var password=document.getElementById('password').value;
+                     if(name==''||password==''){
+                         document.getElementById("eresult").innerHTML="All fields required";
+                         return false;
+                     }
+                      if(name.length<4){
+                         document.getElementById("eresult").innerHTML="Name must be atleast 4 characters";
+                         return false;
+                     }
+                     if(password.length<4){
+                         document.getElementById("eresult").innerHTML="Password must be atleast 4 characters";
+                         return false;
+                     }
+                     else{
+                         return true;
+                     }
+         }
+         
+    </script>
+    
+    
+      
+</body>   
+<footer>
+         © Copyright 2020, All Rights Reserved
+      </footer>   
+</html>  
